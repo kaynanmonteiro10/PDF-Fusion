@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDF Fusion - Unir PDFs Online | by Kaynan Monteiro</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://unpkg.com/pdf-lib@1.17.1/dist/pdf-lib.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="container">
+                <h1>📄 PDF Fusion</h1>
+                <p class="subtitle">Una múltiplos PDFs de forma rápida e segura</p>
+                <p class="developer-credit">por Kaynan Monteiro</p>
+                <div class="header-controls">
+                    <div class="theme-selector">
+                        <label for="themeSelect">Tema:</label>
+                        <select id="themeSelect">
+                            <option value="blue">Azul</option>
+                            <option value="green">Verde</option>
+                            <option value="orange">Laranja</option>
+                            <option value="red">Vermelho</option>
+                            <option value="dark">Noturno</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <div class="upload-area" id="uploadArea">
+                <div class="upload-content">
+                    <div class="upload-icon">📁</div>
+                    <h3>Arraste e solte seus PDFs aqui</h3>
+                    <p>ou</p>
+                    <button class="select-files-btn" id="selectFilesBtn">Selecionar Arquivos</button>
+                    <input type="file" id="fileInput" multiple accept=".pdf" style="display: none;">
+                </div>
+            </div>
+
+            <div class="files-list" id="filesList" style="display: none;">
+                <h3>Arquivos Selecionados:</h3>
+                <div class="files-container" id="filesContainer"></div>
+                
+                <div class="filename-input">
+                    <label for="outputFileName">Nome do arquivo final:</label>
+                    <input type="text" id="outputFileName" placeholder="Digite o nome do arquivo (sem extensão)" value="PDFs_Unidos">
+                </div>
+                
+                <div class="actions">
+                    <button class="btn btn-secondary" id="clearBtn">Limpar Tudo</button>
+                    <button class="btn btn-primary" id="mergeBtn" disabled>Juntar PDFs</button>
+                </div>
+            </div>
+
+            <div class="progress" id="progressContainer" style="display: none;">
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progressFill"></div>
+                </div>
+                <p id="progressText">Processando...</p>
+            </div>
+
+            <div class="result" id="resultContainer" style="display: none;">
+                <div class="success-icon">✅</div>
+                <h3>PDF criado com sucesso!</h3>
+                <button class="btn btn-success" id="downloadBtn">Baixar PDF Unificado</button>
+                <button class="btn btn-secondary" id="newMergeBtn">Juntar Novos PDFs</button>
+            </div>
+        </main>
+    </div>
+
+    <!-- Adicionar antes do fechamento do body -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p>Desenvolvido com ❤️ por <strong>Kaynan Monteiro</strong></p>
+            <p class="footer-subtitle">PDF Fusion © 2025 - Todos os direitos reservados</p>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
